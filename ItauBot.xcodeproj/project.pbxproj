@@ -12,6 +12,9 @@
 		0F0061842215F25D00D3471A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0061822215F25D00D3471A /* Main.storyboard */; };
 		0F0061862215F25F00D3471A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F0061852215F25F00D3471A /* Assets.xcassets */; };
 		0F0061892215F25F00D3471A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0061872215F25F00D3471A /* LaunchScreen.storyboard */; };
+		0F0061912215FD2200D3471A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0061902215FD2200D3471A /* Message.swift */; };
+		0F0061932215FF9D00D3471A /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0061922215FF9D00D3471A /* REST.swift */; };
+		0F85C01D22175C7F0046D4C1 /* ConversasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F85C01C22175C7F0046D4C1 /* ConversasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		0F0061852215F25F00D3471A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F0061882215F25F00D3471A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F00618A2215F25F00D3471A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F0061902215FD2200D3471A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		0F0061922215FF9D00D3471A /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
+		0F85C01C22175C7F0046D4C1 /* ConversasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +60,10 @@
 		0F00617D2215F25D00D3471A /* ItauBot */ = {
 			isa = PBXGroup;
 			children = (
+				0F85C01C22175C7F0046D4C1 /* ConversasViewController.swift */,
 				0F00617E2215F25D00D3471A /* AppDelegate.swift */,
+				0F0061902215FD2200D3471A /* Message.swift */,
+				0F0061922215FF9D00D3471A /* REST.swift */,
 				0F0061802215F25D00D3471A /* ViewController.swift */,
 				0F0061822215F25D00D3471A /* Main.storyboard */,
 				0F0061852215F25F00D3471A /* Assets.xcassets */,
@@ -136,7 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F0061812215F25D00D3471A /* ViewController.swift in Sources */,
+				0F85C01D22175C7F0046D4C1 /* ConversasViewController.swift in Sources */,
+				0F0061912215FD2200D3471A /* Message.swift in Sources */,
 				0F00617F2215F25D00D3471A /* AppDelegate.swift in Sources */,
+				0F0061932215FF9D00D3471A /* REST.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
