@@ -11,7 +11,8 @@ import Foundation
 
 class Message: Codable{
     
-    var text: String = ""
+    var session_id: String = ""
+    var message: String = ""
     
     
 }

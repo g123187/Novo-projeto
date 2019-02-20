@@ -9,7 +9,9 @@
 import Foundation
 
 class REST{
-    private static let basePath = "http://35.239.5.7:8080/conversations/"
+    var msg : Message!
+    
+    private static let basePath = "https://damp-atoll-69989.herokuapp.com/api/session"
     
     private static let configuration: URLSessionConfiguration = {
         let config  = URLSessionConfiguration.default
@@ -23,41 +25,42 @@ class REST{
     private static let session =  URLSession(configuration: configuration)
     
     class func loadGET(){
-        print("aquio")
-        guard let url = URL(string: basePath)else {return}
-       let dataTask =  session.dataTask(with: url) { (data :Data?  , response : URLResponse? ,error: Error?) in
-        if error == nil{
-            guard let response = response as? HTTPURLResponse else {return}
-            
-           if response.statusCode == 200{
-                guard let data = data else{return}
-                do{
-                let msg = try JSONDecoder().decode(Message.self, from: data)
-                 print(msg.text)
-                }catch{
-                    print(error.localizedDescription, "erro no DO CATCH" ,data )
-                }
-           }else {
-                print("Erro com status" , response.statusCode)
+        var msg : Message
+        
+        // Seta a URL
+        let url = URL(string: basePath)!
+        // faz a requisição retornando data, response, error
+        let task = URLSession.shared.dataTask(with: url){(data, response, error) in
+            //checa se tem erro
+            guard error == nil else {
+                // Exibe o erro
+                print(error?.localizedDescription ?? "")
+                // encerra e não executa o restante do código
+                return
             }
-        }else {
-            print("Erro no App ")
+            // Remove do optional
+            guard let data = data else {return}
+                // pega o conteudo do JSON converte para string
+           guard  let contents = String(data: data, encoding: String.Encoding.utf8) else{return}
+                // Printa o JSON como String
+            print(contents)
+            
         }
-        }
-        print("Rodou")
-        dataTask.resume()
+        // Encerra a requisição
+        task.resume()
+
     }
-    var t: Message!
-    class func loadPost(t:Message,onComplete: @escaping (Bool)->Void ){
+    
+    class func loadPost(msg:Message,onComplete: @escaping (Bool)->Void ){
          guard let url = URL(string: basePath)else {
             onComplete(false)
-            print("Passou aqui ")
+
             return
         }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        guard let json = try?  JSONEncoder().encode(t) else {
+        guard let json = try?  JSONEncoder().encode(msg) else {
             onComplete(false)
             return
         }
@@ -66,14 +69,12 @@ class REST{
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             if error == nil{
-                guard let response  = response as? HTTPURLResponse,let _ = data else{
+                guard let response = response as? HTTPURLResponse,let _ = data else{
                     onComplete(false)
-                    print("Passoi aqui ")
                     return
                 }
                 onComplete(true)
-                //msg.text = "oi"
-                print("teste com ",t.text.data(using: <#T##String.Encoding#>)  )
+                print("passou ")
             }else {
                 onComplete(false)
             }

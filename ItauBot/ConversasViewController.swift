@@ -18,6 +18,7 @@ class ConversasViewController: UIViewController {
     @IBOutlet weak var ivEva: UIImageView!
     @IBOutlet weak var lbName: UITextField!
 
+    @IBOutlet weak var lbteste: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,12 +32,14 @@ class ConversasViewController: UIViewController {
         if msg == nil{
             msg  = Message()
         }
-        msg.text = lbName.text!
-        
-        REST.loadPost(t: msg) { (success) in
-           print("teste")
+       // msg.message = lbName.text!
+        REST.loadPost(msg: msg) { (success) in
+        self.lbteste.text =  self.msg.message
+            
+
         }
-    
     }
-    
+    func mostrar(){
+        
+    }
 }

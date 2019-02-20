@@ -9,11 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+     var msg:Message!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-    }
+        REST.loadGET()
     
+    }
+
 }
 
