@@ -9,7 +9,11 @@
 import Foundation
 
 class REST{
-    var msg : Message!
+    enum MsgError {
+        case url
+        case dados
+        case get
+    }
     
     private static let basePath = "https://damp-atoll-69989.herokuapp.com/api/session"
     
@@ -24,15 +28,16 @@ class REST{
     }()
     private static let session =  URLSession(configuration: configuration)
     
-    class func loadGET(){
-        var msg : Message
-        
+    class func loadGET(onComplete:@escaping(MessageId)->Void,onError: @escaping(MsgError)-> Void ){
         // Seta a URL
-        let url = URL(string: basePath)!
+        guard let url = URL(string: basePath)else{
+            onError(.url)
+            return
+        }
         // faz a requisição retornando data, response, error
-        let task = URLSession.shared.dataTask(with: url){(data, response, error) in
+        let task = session.dataTask(with: url){ (data, response, error)in
             //checa se tem erro
-            guard error == nil else {
+           guard error == nil else {
                 // Exibe o erro
                 print(error?.localizedDescription ?? "")
                 // encerra e não executa o restante do código
@@ -40,18 +45,21 @@ class REST{
             }
             // Remove do optional
             guard let data = data else {return}
-                // pega o conteudo do JSON converte para string
-           guard  let contents = String(data: data, encoding: String.Encoding.utf8) else{return}
-                // Printa o JSON como String
-            print(contents)
-            
+            // pega o conteudo do JSON converte para string
+            do{
+            //pega o valor em Striong
+            let msgId = try JSONDecoder().decode(MessageId.self,from:data)
+                onComplete(msgId)
+                
+            }catch{
+                print("teste")
+            }
         }
         // Encerra a requisição
         task.resume()
-
     }
     
-    class func loadPost(msg:Message,onComplete: @escaping (Bool)->Void ){
+    class func loadPost(msg:String,onComplete: @escaping (Bool)->Void ){
          guard let url = URL(string: basePath)else {
             onComplete(false)
 
@@ -66,7 +74,6 @@ class REST{
         }
         request.httpBody = json // corpo
         
-        
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             if error == nil{
                 guard let response = response as? HTTPURLResponse,let _ = data else{
@@ -74,7 +81,6 @@ class REST{
                     return
                 }
                 onComplete(true)
-                print("passou ")
             }else {
                 onComplete(false)
             }
