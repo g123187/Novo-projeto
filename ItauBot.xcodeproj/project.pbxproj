@@ -14,6 +14,7 @@
 		0F0061892215F25F00D3471A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0061872215F25F00D3471A /* LaunchScreen.storyboard */; };
 		0F0061912215FD2200D3471A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0061902215FD2200D3471A /* Message.swift */; };
 		0F0061932215FF9D00D3471A /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0061922215FF9D00D3471A /* REST.swift */; };
+		0F242D372229BCF300A04873 /* PlanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F242D362229BCF300A04873 /* PlanoViewController.swift */; };
 		0F85C01D22175C7F0046D4C1 /* ConversasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F85C01C22175C7F0046D4C1 /* ConversasViewController.swift */; };
 		0FF4B2F622281D85003B1AC1 /* CarrosselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF4B2F522281D85003B1AC1 /* CarrosselCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		0F00618A2215F25F00D3471A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F0061902215FD2200D3471A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0F0061922215FF9D00D3471A /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
+		0F242D362229BCF300A04873 /* PlanoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanoViewController.swift; sourceTree = "<group>"; };
 		0F85C01C22175C7F0046D4C1 /* ConversasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversasViewController.swift; sourceTree = "<group>"; };
 		0FF4B2F522281D85003B1AC1 /* CarrosselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrosselCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				0F85C01C22175C7F0046D4C1 /* ConversasViewController.swift */,
+				0F242D362229BCF300A04873 /* PlanoViewController.swift */,
 				0FF4B2F522281D85003B1AC1 /* CarrosselCollectionViewCell.swift */,
 				0F00617E2215F25D00D3471A /* AppDelegate.swift */,
 				0F0061902215FD2200D3471A /* Message.swift */,
@@ -166,6 +169,7 @@
 				0F00617F2215F25D00D3471A /* AppDelegate.swift in Sources */,
 				0F0061932215FF9D00D3471A /* REST.swift in Sources */,
 				0FF4B2F622281D85003B1AC1 /* CarrosselCollectionViewCell.swift in Sources */,
+				0F242D372229BCF300A04873 /* PlanoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

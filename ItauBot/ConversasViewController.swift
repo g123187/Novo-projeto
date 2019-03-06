@@ -68,7 +68,7 @@ class ConversasViewController: UIViewController{
         lbteste.text = self.botName
         //botão icon
         btoEyes.isHidden = true
-        uvPlano.isHidden = true
+        //uvPlano.isHidden = false
         //imagem
         ivEscolhaClient.layer.cornerRadius = ivEscolhaClient.frame.size.width / 2
         ivEscolhaClient.clipsToBounds = true
@@ -110,6 +110,7 @@ class ConversasViewController: UIViewController{
     //Bot
     @IBAction func btCPF(_ sender: Any) {
     switch lbPasso.text!{
+        
         case passos[0]:
             
             lbPasso.text! = passos[1]
@@ -150,16 +151,18 @@ class ConversasViewController: UIViewController{
             btNextShow.setTitle("continuar →", for: .normal)
             tfUser.keyboardType = .decimalPad
         
-        case passos[3]:
-            
             let content = UNMutableNotificationContent()
             content.title = "teste"
             content.body = "digite este token 1234 no seu App"
             content.sound = UNNotificationSound.default
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats: false )
             let request = UNNotificationRequest(identifier: "teste", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler:nil)
+        
+        
+        case passos[3]:
+            
             
             lbPasso.text! = passos[4]
             ivFone.isHidden = true
@@ -194,7 +197,7 @@ class ConversasViewController: UIViewController{
             //inica capitura de foto
             lbPasso.text! = passos[7]
             ivbot.isHidden = true
-            //ivClient.isHidden = true
+            ivClient.isHidden = true
              
         case passos[7]:
             lbPasso.text! = passos[8]
@@ -226,6 +229,5 @@ extension ConversasViewController : UICollectionViewDataSource, UICollectionView
         return cell!
     }
     
-    
-    
+  
 }
