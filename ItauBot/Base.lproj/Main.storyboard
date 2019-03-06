@@ -276,21 +276,21 @@ Abra agora sua conta, é rápido, fácil e divertido!</string>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JKa-F5-idU">
-                                                    <size key="itemSize" width="374" height="234"/>
+                                                    <size key="itemSize" width="374" height="233"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="fQP-Cf-nBf" customClass="CarrosselCollectionViewCell" customModule="ItauBot" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="-1" width="374" height="234"/>
+                                                        <rect key="frame" x="0.0" y="-0.5" width="374" height="233"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="234"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="233"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lpa-mX-YMF">
-                                                                    <rect key="frame" x="20" y="2" width="334" height="230"/>
+                                                                    <rect key="frame" x="20" y="2" width="334" height="229"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILf-2e-bm0">
                                                                             <rect key="frame" x="8" y="132" width="318" height="30"/>
