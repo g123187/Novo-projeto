@@ -7,13 +7,17 @@
 //
 
 import Foundation
-
+import  Moya
+import Alamofire
+ /*
 class REST{
     enum MsgError {
         case url
         case dados
         case get
     }
+   
+    var msg = Message()
     
     private static let basePath = "https://damp-atoll-69989.herokuapp.com/api/session"
     
@@ -28,10 +32,10 @@ class REST{
     }()
     private static let session =  URLSession(configuration: configuration)
     
-    class func loadGET(onComplete:@escaping(MessageId)->Void,onError: @escaping(MsgError)-> Void ){
+    class func loadGET(/*onComplete:@escaping(Message)->Void,onError: @escaping(MsgError)-> Void*/ ){
         // Seta a URL
         guard let url = URL(string: basePath)else{
-            onError(.url)
+           // onError(.url)
             return
         }
         // faz a requisição retornando data, response, error
@@ -45,12 +49,14 @@ class REST{
             }
             // Remove do optional
             guard let data = data else {return}
+            print(data)
             // pega o conteudo do JSON converte para string
             do{
-            //pega o valor em Striong
-            let msgId = try JSONDecoder().decode(MessageId.self,from:data)
-                onComplete(msgId)
                 
+            //pega o valor em Striong
+            let msgId = try JSONDecoder().decode(msg.self,from:data)
+              //onComplete(msgId)
+                print(msgId)
             }catch{
                 print("teste")
             }
@@ -76,7 +82,7 @@ class REST{
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             if error == nil{
-                guard let response = response as? HTTPURLResponse,let _ = data else{
+                guard let _ = response as? HTTPURLResponse,let _ = data else{
                     onComplete(false)
                     return
                 }
@@ -88,3 +94,4 @@ class REST{
         dataTask.resume()
     }
 }
+*/

@@ -9,6 +9,10 @@
 import UIKit
 import PushKit
 import UserNotifications
+import Moya
+import Alamofire
+
+//import MessageKit
 
 enum MessageType {
     case user
@@ -19,6 +23,7 @@ enum MessageType {
 class ConversasViewController: UIViewController{
     
     var pushRegistry: PKPushRegistry!
+   // var rest = REST()
    
     var session_id:String = ""
     var message: String = ""
@@ -63,8 +68,9 @@ class ConversasViewController: UIViewController{
    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
-       
+         
         lbteste.text = self.botName
         //botão icon
         btoEyes.isHidden = true
@@ -108,8 +114,10 @@ class ConversasViewController: UIViewController{
     }
     
     //Bot
+    @available(iOS 12.0, *)
     @IBAction func btCPF(_ sender: Any) {
-    switch lbPasso.text!{
+        
+        switch lbPasso.text!{
         
         case passos[0]:
             
@@ -120,6 +128,7 @@ class ConversasViewController: UIViewController{
             tfUser.placeholder = "digite seu cpf"
             lbtextUser.textAlignment = NSTextAlignment.center;
             btNextShow.setTitle("agora definir uma senha →", for: .normal)
+           // self.tfUser.layer.mask = @
             tfUser.keyboardType = .decimalPad
     
         case passos[1]:
@@ -149,21 +158,22 @@ class ConversasViewController: UIViewController{
             tfUser.placeholder = "digite seu telefone"
             lbtextUser.textAlignment = NSTextAlignment.center
             btNextShow.setTitle("continuar →", for: .normal)
-            tfUser.keyboardType = .decimalPad
+            tfUser.keyboardType = .phonePad
         
+            
+        case passos[3]:
+            
             let content = UNMutableNotificationContent()
-            content.title = "teste"
+            content.title = "TOKEN"
             content.body = "digite este token 1234 no seu App"
             content.sound = UNNotificationSound.default
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval:5, repeats: false )
-            let request = UNNotificationRequest(identifier: "teste", content: content, trigger: trigger)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval:0.5, repeats: false )
+            let request = UNNotificationRequest(identifier: "TOKEN", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler:nil)
-        
-        
-        case passos[3]:
             
-            
+
+            self.navigationController?.popViewController(animated: true)
             lbPasso.text! = passos[4]
             ivFone.isHidden = true
             //self.lbUsername.text = self.tfUser.text
@@ -172,7 +182,7 @@ class ConversasViewController: UIViewController{
             tfUser.placeholder = "digite o token"
             lbtextUser.textAlignment = NSTextAlignment.center;
             btNextShow.setTitle("agora definir uma senha →", for: .normal)
-            //tfUser.keyboardType = .decimalPad
+             tfUser.textContentType = .oneTimeCode
         
         case passos[4]:
             
@@ -190,6 +200,7 @@ class ConversasViewController: UIViewController{
             lbPasso.text! = passos[6]
             uvPlano.isHidden = false
             lbUserEsc.text = lbUsername.text
+            btNextShow.isHidden = true
         
           
         case passos[6]:

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoitau" translatesAutoresizingMaskIntoConstraints="NO" id="SLY-bc-Iy7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoitau" translatesAutoresizingMaskIntoConstraints="NO" id="SLY-bc-Iy7">
                                 <rect key="frame" x="130" y="276" width="115" height="115"/>
                             </imageView>
                         </subviews>

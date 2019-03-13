@@ -8,20 +8,18 @@
 
 import Foundation
 
-enum Massatype{
-    case session_id
-    case message
-}
+
 
 struct MessageId:Codable {
     var session_id:String
     
     init(session_id:String){
     self.session_id = session_id
+        
     }
 }
 
-class  Message: Codable{
+class Message:Codable{
     
     var session_id:String
     var message: String
@@ -29,6 +27,5 @@ class  Message: Codable{
     init(session_id:String, message:String){
         self.session_id = session_id
         self.message = message
-        
     }
 }
